@@ -1,4 +1,6 @@
-
+*.o
+*.Plo
+/build
+/*.xcframework
 freetds-0.91/config.status
-
 freetds-0.91/config.log

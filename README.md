@@ -1,7 +1,11 @@
-FreeTDS-iOS
-===========
+FreeTDS as an Xcode Framework
+=============================
 
-a script for building FreeTDS for IOS
+A script for building FreeTDS as an `.xcframework`.
+
+Run `./build.sh` to get started. This will produce `libsybdb.xcframework`.
+
+<!--
 
 Update:
 To get it compiling I had to do the following:
@@ -18,3 +22,4 @@ FreeTDS example code in C:
 http://lists.ibiblio.org/pipermail/freetds/2007q4/022482.html
 </pre>
 
+-->

@@ -1,4 +1,4 @@
-config.o: config.c ../../include/config.h \
+main.o: main.c ../../include/config.h \
   /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.0.0/include/stdarg.h \
   /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/stdio.h \
   /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/_stdio.h \
@@ -34,22 +34,37 @@ config.o: config.c ../../include/config.h \
   /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_ssize_t.h \
   /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/secure/_stdio.h \
   /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/secure/_common.h \
-  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/ctype.h \
-  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/_ctype.h \
-  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/runetype.h \
-  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_ct_rune_t.h \
-  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_rune_t.h \
-  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_wchar_t.h \
-  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_wint_t.h \
-  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/errno.h \
-  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/errno.h \
-  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_errno_t.h \
-  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/stdlib.h \
-  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/wait.h \
+  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/unistd.h \
+  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/unistd.h \
+  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_posix_vdisable.h \
+  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_seek_set.h \
+  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/_types/_uint64_t.h \
+  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/_types/_uint32_t.h \
+  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_uid_t.h \
+  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_gid_t.h \
   /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_pid_t.h \
-  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_id_t.h \
-  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/signal.h \
+  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_useconds_t.h \
+  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/select.h \
   /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/appleapiopts.h \
+  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_fd_def.h \
+  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_timespec.h \
+  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_timeval.h \
+  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_time_t.h \
+  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_suseconds_t.h \
+  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_sigset_t.h \
+  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_fd_setsize.h \
+  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_fd_set.h \
+  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_fd_clr.h \
+  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_fd_isset.h \
+  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_fd_zero.h \
+  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_fd_copy.h \
+  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_select.h \
+  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_dev_t.h \
+  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_mode_t.h \
+  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_uuid_t.h \
+  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/gethostuuid.h \
+  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/signal.h \
+  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/signal.h \
   /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/machine/signal.h \
   /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/i386/signal.h \
   /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/machine/_mcontext.h \
@@ -59,40 +74,42 @@ config.o: config.c ../../include/config.h \
   /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_pthread/_pthread_attr_t.h \
   /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_sigaltstack.h \
   /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_ucontext.h \
-  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_sigset_t.h \
-  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_uid_t.h \
+  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_pthread/_pthread_t.h \
+  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/fcntl.h \
+  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/fcntl.h \
+  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_o_sync.h \
+  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_o_dsync.h \
+  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_s_ifmt.h \
+  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_filesec_t.h \
+  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/errno.h \
+  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/errno.h \
+  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_errno_t.h \
+  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/stdlib.h \
+  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/wait.h \
+  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_id_t.h \
   /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/resource.h \
   /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.0.0/include/stdint.h \
   /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/stdint.h \
   /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/_types/_uint8_t.h \
   /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/_types/_uint16_t.h \
-  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/_types/_uint32_t.h \
-  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/_types/_uint64_t.h \
   /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/_types/_intmax_t.h \
   /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/_types/_uintmax_t.h \
-  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_timeval.h \
   /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/machine/endian.h \
   /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/i386/endian.h \
   /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_endian.h \
   /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/libkern/_OSByteOrder.h \
   /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/libkern/i386/_OSByteOrder.h \
   /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/alloca.h \
+  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_ct_rune_t.h \
+  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_rune_t.h \
+  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_wchar_t.h \
   /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/malloc/_malloc.h \
-  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_dev_t.h \
-  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_mode_t.h \
   /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/string.h \
   /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_rsize_t.h \
   /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/strings.h \
   /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/secure/_strings.h \
   /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/secure/_string.h \
-  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.0.0/include/limits.h \
-  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/limits.h \
-  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/machine/limits.h \
-  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/i386/limits.h \
-  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/i386/_limits.h \
-  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/syslimits.h \
-  pool.h \
-  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/assert.h \
+  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/socket.h \
   /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/types.h \
   /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_u_char.h \
   /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_u_short.h \
@@ -100,7 +117,6 @@ config.o: config.c ../../include/config.h \
   /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_caddr_t.h \
   /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_blkcnt_t.h \
   /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_blksize_t.h \
-  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_gid_t.h \
   /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_in_addr_t.h \
   /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_in_port_t.h \
   /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_ino_t.h \
@@ -108,16 +124,6 @@ config.o: config.c ../../include/config.h \
   /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_key_t.h \
   /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_nlink_t.h \
   /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_clock_t.h \
-  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_time_t.h \
-  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_useconds_t.h \
-  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_suseconds_t.h \
-  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_fd_def.h \
-  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_fd_setsize.h \
-  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_fd_set.h \
-  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_fd_clr.h \
-  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_fd_zero.h \
-  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_fd_isset.h \
-  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_fd_copy.h \
   /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_pthread/_pthread_cond_t.h \
   /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_pthread/_pthread_condattr_t.h \
   /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_pthread/_pthread_mutex_t.h \
@@ -125,29 +131,27 @@ config.o: config.c ../../include/config.h \
   /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_pthread/_pthread_once_t.h \
   /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_pthread/_pthread_rwlock_t.h \
   /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_pthread/_pthread_rwlockattr_t.h \
-  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_pthread/_pthread_t.h \
   /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_pthread/_pthread_key_t.h \
   /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_fsblkcnt_t.h \
   /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_fsfilcnt_t.h \
-  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/netinet/in.h \
-  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/socket.h \
   /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/machine/_param.h \
   /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/i386/_param.h \
   /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/net/net_kev.h \
   /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_sa_family_t.h \
   /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_socklen_t.h \
   /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_iovec_t.h \
+  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/netinet/in.h \
   /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/netinet6/in6.h \
+  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/arpa/inet.h \
+  pool.h \
+  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/assert.h \
   /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/time.h \
-  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_timespec.h \
   /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_timeval64.h \
   /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/time.h \
-  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_select.h \
   ../../include/freetds/tds.h \
   /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.0.0/include/stddef.h \
   /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.0.0/include/__stddef_max_align_t.h \
   /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/netdb.h \
-  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/arpa/inet.h \
   ../../include/freetds/version.h ../../include/tds_sysdep_public.h \
   ../../include/freetds/sysdep_private.h \
   /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.0.0/include/inttypes.h \
@@ -167,16 +171,8 @@ config.o: config.c ../../include/config.h \
   /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/readpassphrase.h \
   /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/libgen.h \
   /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/getopt.h \
-  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/unistd.h \
-  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/unistd.h \
-  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_posix_vdisable.h \
-  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_seek_set.h \
-  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/select.h \
-  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_uuid_t.h \
-  /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/gethostuuid.h \
   ../../include/freetds/proto.h ../../include/freetds/dlist.h \
-  ../../include/freetds/dlist.tmpl.h ../../include/freetds/configs.h \
-  ../../include/freetds/sysconfdir.h
+  ../../include/freetds/dlist.tmpl.h
 
 ../../include/config.h:
 
@@ -250,37 +246,67 @@ config.o: config.c ../../include/config.h \
 
 /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/secure/_common.h:
 
-/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/ctype.h:
+/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/unistd.h:
 
-/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/_ctype.h:
+/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/unistd.h:
 
-/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/runetype.h:
+/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_posix_vdisable.h:
 
-/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_ct_rune_t.h:
+/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_seek_set.h:
 
-/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_rune_t.h:
+/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/_types/_uint64_t.h:
 
-/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_wchar_t.h:
+/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/_types/_uint32_t.h:
 
-/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_wint_t.h:
+/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_uid_t.h:
 
-/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/errno.h:
-
-/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/errno.h:
-
-/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_errno_t.h:
-
-/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/stdlib.h:
-
-/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/wait.h:
+/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_gid_t.h:
 
 /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_pid_t.h:
 
-/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_id_t.h:
+/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_useconds_t.h:
 
-/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/signal.h:
+/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/select.h:
 
 /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/appleapiopts.h:
+
+/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_fd_def.h:
+
+/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_timespec.h:
+
+/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_timeval.h:
+
+/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_time_t.h:
+
+/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_suseconds_t.h:
+
+/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_sigset_t.h:
+
+/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_fd_setsize.h:
+
+/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_fd_set.h:
+
+/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_fd_clr.h:
+
+/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_fd_isset.h:
+
+/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_fd_zero.h:
+
+/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_fd_copy.h:
+
+/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_select.h:
+
+/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_dev_t.h:
+
+/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_mode_t.h:
+
+/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_uuid_t.h:
+
+/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/gethostuuid.h:
+
+/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/signal.h:
+
+/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/signal.h:
 
 /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/machine/signal.h:
 
@@ -300,9 +326,31 @@ config.o: config.c ../../include/config.h \
 
 /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_ucontext.h:
 
-/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_sigset_t.h:
+/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_pthread/_pthread_t.h:
 
-/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_uid_t.h:
+/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/fcntl.h:
+
+/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/fcntl.h:
+
+/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_o_sync.h:
+
+/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_o_dsync.h:
+
+/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_s_ifmt.h:
+
+/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_filesec_t.h:
+
+/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/errno.h:
+
+/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/errno.h:
+
+/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_errno_t.h:
+
+/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/stdlib.h:
+
+/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/wait.h:
+
+/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_id_t.h:
 
 /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/resource.h:
 
@@ -314,15 +362,9 @@ config.o: config.c ../../include/config.h \
 
 /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/_types/_uint16_t.h:
 
-/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/_types/_uint32_t.h:
-
-/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/_types/_uint64_t.h:
-
 /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/_types/_intmax_t.h:
 
 /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/_types/_uintmax_t.h:
-
-/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_timeval.h:
 
 /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/machine/endian.h:
 
@@ -336,11 +378,13 @@ config.o: config.c ../../include/config.h \
 
 /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/alloca.h:
 
+/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_ct_rune_t.h:
+
+/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_rune_t.h:
+
+/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_wchar_t.h:
+
 /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/malloc/_malloc.h:
-
-/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_dev_t.h:
-
-/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_mode_t.h:
 
 /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/string.h:
 
@@ -352,21 +396,7 @@ config.o: config.c ../../include/config.h \
 
 /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/secure/_string.h:
 
-/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.0.0/include/limits.h:
-
-/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/limits.h:
-
-/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/machine/limits.h:
-
-/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/i386/limits.h:
-
-/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/i386/_limits.h:
-
-/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/syslimits.h:
-
-pool.h:
-
-/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/assert.h:
+/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/socket.h:
 
 /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/types.h:
 
@@ -382,8 +412,6 @@ pool.h:
 
 /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_blksize_t.h:
 
-/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_gid_t.h:
-
 /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_in_addr_t.h:
 
 /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_in_port_t.h:
@@ -397,26 +425,6 @@ pool.h:
 /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_nlink_t.h:
 
 /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_clock_t.h:
-
-/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_time_t.h:
-
-/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_useconds_t.h:
-
-/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_suseconds_t.h:
-
-/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_fd_def.h:
-
-/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_fd_setsize.h:
-
-/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_fd_set.h:
-
-/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_fd_clr.h:
-
-/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_fd_zero.h:
-
-/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_fd_isset.h:
-
-/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_fd_copy.h:
 
 /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_pthread/_pthread_cond_t.h:
 
@@ -432,17 +440,11 @@ pool.h:
 
 /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_pthread/_pthread_rwlockattr_t.h:
 
-/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_pthread/_pthread_t.h:
-
 /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_pthread/_pthread_key_t.h:
 
 /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_fsblkcnt_t.h:
 
 /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_fsfilcnt_t.h:
-
-/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/netinet/in.h:
-
-/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/socket.h:
 
 /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/machine/_param.h:
 
@@ -456,17 +458,21 @@ pool.h:
 
 /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_iovec_t.h:
 
+/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/netinet/in.h:
+
 /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/netinet6/in6.h:
 
-/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/time.h:
+/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/arpa/inet.h:
 
-/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_timespec.h:
+pool.h:
+
+/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/assert.h:
+
+/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/time.h:
 
 /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_timeval64.h:
 
 /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/time.h:
-
-/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_select.h:
 
 ../../include/freetds/tds.h:
 
@@ -475,8 +481,6 @@ pool.h:
 /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.0.0/include/__stddef_max_align_t.h:
 
 /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/netdb.h:
-
-/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/arpa/inet.h:
 
 ../../include/freetds/version.h:
 
@@ -520,26 +524,8 @@ pool.h:
 
 /Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/getopt.h:
 
-/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/unistd.h:
-
-/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/unistd.h:
-
-/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_posix_vdisable.h:
-
-/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_seek_set.h:
-
-/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/select.h:
-
-/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/sys/_types/_uuid_t.h:
-
-/Users/ja/Downloads/Xcode-beta.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk/usr/include/gethostuuid.h:
-
 ../../include/freetds/proto.h:
 
 ../../include/freetds/dlist.h:
 
 ../../include/freetds/dlist.tmpl.h:
-
-../../include/freetds/configs.h:
-
-../../include/freetds/sysconfdir.h:

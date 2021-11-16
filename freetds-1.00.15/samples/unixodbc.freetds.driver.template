@@ -21,5 +21,5 @@
 #
 [FreeTDS]
 Description	= FreeTDS unixODBC Driver
-Driver		= /Users/mof/Downloads/FreeTDS-iOS/build/freetds/arm64/lib/libtdsodbc.so
-Setup 		= /Users/mof/Downloads/FreeTDS-iOS/build/freetds/arm64/lib/libtdsodbc.so
+Driver		= /Users/ja/Projects/Source/freetds-ios/build/WatchSimulator/arm64/lib/libtdsodbc.so
+Setup 		= /Users/ja/Projects/Source/freetds-ios/build/WatchSimulator/arm64/lib/libtdsodbc.so

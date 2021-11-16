@@ -16,14 +16,16 @@ export SHELL
 
 # Be more Bourne compatible
 DUALCASE=1; export DUALCASE # for MKS sh
-if test -n "${ZSH_VERSION+set}" && (emulate sh) >/dev/null 2>&1; then :
+as_nop=:
+if test ${ZSH_VERSION+y} && (emulate sh) >/dev/null 2>&1
+then :
   emulate sh
   NULLCMD=:
   # Pre-4.2 versions of Zsh do word splitting on ${1+"$@"}, which
   # is contrary to our usage.  Disable this feature.
   alias -g '${1+"$@"}'='"$@"'
   setopt NO_GLOB_SUBST
-else
+else $as_nop
   case `(set -o) 2>/dev/null` in #(
   *posix*) :
     set -o posix ;; #(
@@ -33,46 +35,46 @@ esac
 fi
 
 
+
+# Reset variables that may have inherited troublesome values from
+# the environment.
+
+# IFS needs to be set, to space, tab, and newline, in precisely that order.
+# (If _AS_PATH_WALK were called with IFS unset, it would have the
+# side effect of setting IFS to empty, thus disabling word splitting.)
+# Quoting is to prevent editors from complaining about space-tab.
 as_nl='
 '
 export as_nl
-# Printing a long string crashes Solaris 7 /usr/bin/printf.
-as_echo='\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\'
-as_echo=$as_echo$as_echo$as_echo$as_echo$as_echo
-as_echo=$as_echo$as_echo$as_echo$as_echo$as_echo$as_echo
-# Prefer a ksh shell builtin over an external printf program on Solaris,
-# but without wasting forks for bash or zsh.
-if test -z "$BASH_VERSION$ZSH_VERSION" \
-    && (test "X`print -r -- $as_echo`" = "X$as_echo") 2>/dev/null; then
-  as_echo='print -r --'
-  as_echo_n='print -rn --'
-elif (test "X`printf %s $as_echo`" = "X$as_echo") 2>/dev/null; then
-  as_echo='printf %s\n'
-  as_echo_n='printf %s'
-else
-  if test "X`(/usr/ucb/echo -n -n $as_echo) 2>/dev/null`" = "X-n $as_echo"; then
-    as_echo_body='eval /usr/ucb/echo -n "$1$as_nl"'
-    as_echo_n='/usr/ucb/echo -n'
-  else
-    as_echo_body='eval expr "X$1" : "X\\(.*\\)"'
-    as_echo_n_body='eval
-      arg=$1;
-      case $arg in #(
-      *"$as_nl"*)
-	expr "X$arg" : "X\\(.*\\)$as_nl";
-	arg=`expr "X$arg" : ".*$as_nl\\(.*\\)"`;;
-      esac;
-      expr "X$arg" : "X\\(.*\\)" | tr -d "$as_nl"
-    '
-    export as_echo_n_body
-    as_echo_n='sh -c $as_echo_n_body as_echo'
-  fi
-  export as_echo_body
-  as_echo='sh -c $as_echo_body as_echo'
-fi
+IFS=" ""	$as_nl"
+
+PS1='$ '
+PS2='> '
+PS4='+ '
+
+# Ensure predictable behavior from utilities with locale-dependent output.
+LC_ALL=C
+export LC_ALL
+LANGUAGE=C
+export LANGUAGE
+
+# We cannot yet rely on "unset" to work, but we need these variables
+# to be unset--not just set to an empty or harmless value--now, to
+# avoid bugs in old shells (e.g. pre-3.0 UWIN ksh).  This construct
+# also avoids known problems related to "unset" and subshell syntax
+# in other old shells (e.g. bash 2.01 and pdksh 5.2.14).
+for as_var in BASH_ENV ENV MAIL MAILPATH CDPATH
+do eval test \${$as_var+y} \
+  && ( (unset $as_var) || exit 1) >/dev/null 2>&1 && unset $as_var || :
+done
+
+# Ensure that fds 0, 1, and 2 are open.
+if (exec 3>&0) 2>/dev/null; then :; else exec 0</dev/null; fi
+if (exec 3>&1) 2>/dev/null; then :; else exec 1>/dev/null; fi
+if (exec 3>&2)            ; then :; else exec 2>/dev/null; fi
 
 # The user is always right.
-if test "${PATH_SEPARATOR+set}" != set; then
+if ${PATH_SEPARATOR+false} :; then
   PATH_SEPARATOR=:
   (PATH='/bin;/bin'; FPATH=$PATH; sh -c :) >/dev/null 2>&1 && {
     (PATH='/bin:/bin'; FPATH=$PATH; sh -c :) >/dev/null 2>&1 ||
@@ -80,13 +82,6 @@ if test "${PATH_SEPARATOR+set}" != set; then
   }
 fi
 
-
-# IFS
-# We need space, tab and new line, in precisely that order.  Quoting is
-# there to prevent editors from complaining about space-tab.
-# (If _AS_PATH_WALK were called with IFS unset, it would disable word
-# splitting by setting IFS to empty value.)
-IFS=" ""	$as_nl"
 
 # Find who we are.  Look in the path if we contain no directory separator.
 as_myself=
@@ -96,8 +91,12 @@ case $0 in #((
 for as_dir in $PATH
 do
   IFS=$as_save_IFS
-  test -z "$as_dir" && as_dir=.
-    test -r "$as_dir/$0" && as_myself=$as_dir/$0 && break
+  case $as_dir in #(((
+    '') as_dir=./ ;;
+    */) ;;
+    *) as_dir=$as_dir/ ;;
+  esac
+    test -r "$as_dir$0" && as_myself=$as_dir$0 && break
   done
 IFS=$as_save_IFS
 
@@ -109,30 +108,10 @@ if test "x$as_myself" = x; then
   as_myself=$0
 fi
 if test ! -f "$as_myself"; then
-  $as_echo "$as_myself: error: cannot find myself; rerun with an absolute file name" >&2
+  printf "%s\n" "$as_myself: error: cannot find myself; rerun with an absolute file name" >&2
   exit 1
 fi
 
-# Unset variables that we do not need and which cause bugs (e.g. in
-# pre-3.0 UWIN ksh).  But do not cause bugs in bash 2.01; the "|| exit 1"
-# suppresses any "Segmentation fault" message there.  '((' could
-# trigger a bug in pdksh 5.2.14.
-for as_var in BASH_ENV ENV MAIL MAILPATH
-do eval test x\${$as_var+set} = xset \
-  && ( (unset $as_var) || exit 1) >/dev/null 2>&1 && unset $as_var || :
-done
-PS1='$ '
-PS2='> '
-PS4='+ '
-
-# NLS nuisances.
-LC_ALL=C
-export LC_ALL
-LANGUAGE=C
-export LANGUAGE
-
-# CDPATH.
-(unset CDPATH) >/dev/null 2>&1 && unset CDPATH
 
 
 # as_fn_error STATUS ERROR [LINENO LOG_FD]
@@ -145,11 +124,12 @@ as_fn_error ()
   as_status=$1; test $as_status -eq 0 && as_status=1
   if test "$4"; then
     as_lineno=${as_lineno-"$3"} as_lineno_stack=as_lineno_stack=$as_lineno_stack
-    $as_echo "$as_me:${as_lineno-$LINENO}: error: $2" >&$4
+    printf "%s\n" "$as_me:${as_lineno-$LINENO}: error: $2" >&$4
   fi
-  $as_echo "$as_me: error: $2" >&2
+  printf "%s\n" "$as_me: error: $2" >&2
   as_fn_exit $as_status
 } # as_fn_error
+
 
 
 # as_fn_set_status STATUS
@@ -178,18 +158,20 @@ as_fn_unset ()
   { eval $1=; unset $1;}
 }
 as_unset=as_fn_unset
+
 # as_fn_append VAR VALUE
 # ----------------------
 # Append the text in VALUE to the end of the definition contained in VAR. Take
 # advantage of any shell optimizations that allow amortized linear growth over
 # repeated appends, instead of the typical quadratic growth present in naive
 # implementations.
-if (eval "as_var=1; as_var+=2; test x\$as_var = x12") 2>/dev/null; then :
+if (eval "as_var=1; as_var+=2; test x\$as_var = x12") 2>/dev/null
+then :
   eval 'as_fn_append ()
   {
     eval $1+=\$2
   }'
-else
+else $as_nop
   as_fn_append ()
   {
     eval $1=\$$1\$2
@@ -201,12 +183,13 @@ fi # as_fn_append
 # Perform arithmetic evaluation on the ARGs, and store the result in the
 # global $as_val. Take advantage of shells that can avoid forks. The arguments
 # must be portable across $(()) and expr.
-if (eval "test \$(( 1 + 1 )) = 2") 2>/dev/null; then :
+if (eval "test \$(( 1 + 1 )) = 2") 2>/dev/null
+then :
   eval 'as_fn_arith ()
   {
     as_val=$(( $* ))
   }'
-else
+else $as_nop
   as_fn_arith ()
   {
     as_val=`expr "$@" || test $? -eq 1`
@@ -237,7 +220,7 @@ as_me=`$as_basename -- "$0" ||
 $as_expr X/"$0" : '.*/\([^/][^/]*\)/*$' \| \
 	 X"$0" : 'X\(//\)$' \| \
 	 X"$0" : 'X\(/\)' \| . 2>/dev/null ||
-$as_echo X/"$0" |
+printf "%s\n" X/"$0" |
     sed '/^.*\/\([^/][^/]*\)\/*$/{
 	    s//\1/
 	    q
@@ -259,6 +242,10 @@ as_cr_Letters=$as_cr_letters$as_cr_LETTERS
 as_cr_digits='0123456789'
 as_cr_alnum=$as_cr_Letters$as_cr_digits
 
+
+# Determine whether it's possible to make 'echo' print without a newline.
+# These variables are no longer used directly by Autoconf, but are AC_SUBSTed
+# for compatibility with existing Makefiles.
 ECHO_C= ECHO_N= ECHO_T=
 case `echo -n x` in #(((((
 -n*)
@@ -271,6 +258,12 @@ case `echo -n x` in #(((((
 *)
   ECHO_N='-n';;
 esac
+
+# For backward compatibility with old third-party macros, we provide
+# the shell variables $as_echo and $as_echo_n.  New code should use
+# AS_ECHO(["message"]) and AS_ECHO_N(["message"]), respectively.
+as_echo='printf %s\n'
+as_echo_n='printf %s'
 
 rm -f conf$$ conf$$.exe conf$$.file
 if test -d conf$$.dir; then
@@ -313,7 +306,7 @@ as_fn_mkdir_p ()
     as_dirs=
     while :; do
       case $as_dir in #(
-      *\'*) as_qdir=`$as_echo "$as_dir" | sed "s/'/'\\\\\\\\''/g"`;; #'(
+      *\'*) as_qdir=`printf "%s\n" "$as_dir" | sed "s/'/'\\\\\\\\''/g"`;; #'(
       *) as_qdir=$as_dir;;
       esac
       as_dirs="'$as_qdir' $as_dirs"
@@ -322,7 +315,7 @@ $as_expr X"$as_dir" : 'X\(.*[^/]\)//*[^/][^/]*/*$' \| \
 	 X"$as_dir" : 'X\(//\)[^/]' \| \
 	 X"$as_dir" : 'X\(//\)$' \| \
 	 X"$as_dir" : 'X\(/\)' \| . 2>/dev/null ||
-$as_echo X"$as_dir" |
+printf "%s\n" X"$as_dir" |
     sed '/^X\(.*[^/]\)\/\/*[^/][^/]*\/*$/{
 	    s//\1/
 	    q
@@ -381,7 +374,7 @@ exec 6>&1
 # values after options handling.
 ac_log="
 This file was extended by FreeTDS $as_me 1.00.15, which was
-generated by GNU Autoconf 2.69.  Invocation command line was
+generated by GNU Autoconf 2.71.  Invocation command line was
 
   CONFIG_FILES    = $CONFIG_FILES
   CONFIG_HEADERS  = $CONFIG_HEADERS
@@ -427,21 +420,21 @@ $config_commands
 
 Report bugs to the package provider."
 
-ac_cs_config="'--prefix=/Users/mof/Downloads/FreeTDS-iOS/build/freetds/arm64' '--host=aarch64-apple-darwin11' '-build=x86_64-apple-darwin11' '-with-tdsver=7.4' 'CFLAGS=-arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk -miphoneos-version-min=6.0' 'build_alias=x86_64-apple-darwin11' 'host_alias=aarch64-apple-darwin11' 'CC=clang' 'LDFLAGS=-arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk -miphoneos-version-min=6.0'"
+ac_cs_config='--disable-apps --disable-server --disable-pool --prefix=/Users/ja/Projects/Source/freetds-ios/build/WatchSimulator/arm64 --host=aarch64-apple-darwin20 --build=x86_64-apple-darwin21 --with-tdsver=7.4 '\''CFLAGS=-arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk -fembed-bitcode'\'' build_alias=x86_64-apple-darwin21 host_alias=aarch64-apple-darwin20 CC=clang '\''LDFLAGS=-arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk -fembed-bitcode'\'''
 ac_cs_version="\
 FreeTDS config.status 1.00.15
-configured by ./configure, generated by GNU Autoconf 2.69,
+configured by ./configure, generated by GNU Autoconf 2.71,
   with options \"$ac_cs_config\"
 
-Copyright (C) 2012 Free Software Foundation, Inc.
+Copyright (C) 2021 Free Software Foundation, Inc.
 This config.status script is free software; the Free Software Foundation
 gives unlimited permission to copy, distribute and modify it."
 
-ac_pwd='/Users/mof/Downloads/FreeTDS-iOS/freetds-1.00.15'
+ac_pwd='/Users/ja/Projects/Source/freetds-ios/freetds-1.00.15'
 srcdir='.'
 INSTALL='/usr/bin/install -c'
 MKDIR_P='./install-sh -c -d'
-AWK='awk'
+AWK='gawk'
 test -n "$AWK" || AWK=awk
 # The default lists apply if the user does not specify any file.
 ac_need_defaults=:
@@ -470,15 +463,15 @@ do
   -recheck | --recheck | --rechec | --reche | --rech | --rec | --re | --r)
     ac_cs_recheck=: ;;
   --version | --versio | --versi | --vers | --ver | --ve | --v | -V )
-    $as_echo "$ac_cs_version"; exit ;;
+    printf "%s\n" "$ac_cs_version"; exit ;;
   --config | --confi | --conf | --con | --co | --c )
-    $as_echo "$ac_cs_config"; exit ;;
+    printf "%s\n" "$ac_cs_config"; exit ;;
   --debug | --debu | --deb | --de | --d | -d )
     debug=: ;;
   --file | --fil | --fi | --f )
     $ac_shift
     case $ac_optarg in
-    *\'*) ac_optarg=`$as_echo "$ac_optarg" | sed "s/'/'\\\\\\\\''/g"` ;;
+    *\'*) ac_optarg=`printf "%s\n" "$ac_optarg" | sed "s/'/'\\\\\\\\''/g"` ;;
     '') as_fn_error $? "missing file argument" ;;
     esac
     as_fn_append CONFIG_FILES " '$ac_optarg'"
@@ -486,7 +479,7 @@ do
   --header | --heade | --head | --hea )
     $ac_shift
     case $ac_optarg in
-    *\'*) ac_optarg=`$as_echo "$ac_optarg" | sed "s/'/'\\\\\\\\''/g"` ;;
+    *\'*) ac_optarg=`printf "%s\n" "$ac_optarg" | sed "s/'/'\\\\\\\\''/g"` ;;
     esac
     as_fn_append CONFIG_HEADERS " '$ac_optarg'"
     ac_need_defaults=false;;
@@ -495,7 +488,7 @@ do
     as_fn_error $? "ambiguous option: \`$1'
 Try \`$0 --help' for more information.";;
   --help | --hel | -h )
-    $as_echo "$ac_cs_usage"; exit ;;
+    printf "%s\n" "$ac_cs_usage"; exit ;;
   -q | -quiet | --quiet | --quie | --qui | --qu | --q \
   | -silent | --silent | --silen | --sile | --sil | --si | --s)
     ac_cs_silent=: ;;
@@ -519,9 +512,9 @@ if $ac_cs_silent; then
 fi
 
 if $ac_cs_recheck; then
-  set X /bin/sh './configure'  '--prefix=/Users/mof/Downloads/FreeTDS-iOS/build/freetds/arm64' '--host=aarch64-apple-darwin11' '-build=x86_64-apple-darwin11' '-with-tdsver=7.4' 'CFLAGS=-arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk -miphoneos-version-min=6.0' 'build_alias=x86_64-apple-darwin11' 'host_alias=aarch64-apple-darwin11' 'CC=clang' 'LDFLAGS=-arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk -miphoneos-version-min=6.0' $ac_configure_extra_args --no-create --no-recursion
+  set X /bin/sh './configure'  '--disable-apps' '--disable-server' '--disable-pool' '--prefix=/Users/ja/Projects/Source/freetds-ios/build/WatchSimulator/arm64' '--host=aarch64-apple-darwin20' '--build=x86_64-apple-darwin21' '--with-tdsver=7.4' 'CFLAGS=-arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk -fembed-bitcode' 'build_alias=x86_64-apple-darwin21' 'host_alias=aarch64-apple-darwin20' 'CC=clang' 'LDFLAGS=-arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk -fembed-bitcode' $ac_configure_extra_args --no-create --no-recursion
   shift
-  $as_echo "running CONFIG_SHELL=/bin/sh $*" >&6
+  \printf "%s\n" "running CONFIG_SHELL=/bin/sh $*" >&6
   CONFIG_SHELL='/bin/sh'
   export CONFIG_SHELL
   exec "$@"
@@ -533,13 +526,13 @@ exec 5>>config.log
   sed 'h;s/./-/g;s/^.../## /;s/...$/ ##/;p;x;p;x' <<_ASBOX
 ## Running $as_me. ##
 _ASBOX
-  $as_echo "$ac_log"
+  printf "%s\n" "$ac_log"
 } >&5
 
 #
 # INIT-COMMANDS
 #
-AMDEP_TRUE="" ac_aux_dir="."
+AMDEP_TRUE="" MAKE="make"
 
 
 # The HP-UX ksh and POSIX shell print the target directory to stdout
@@ -553,7 +546,7 @@ macro_version='2.4.6'
 macro_revision='2.4.6'
 AS='as'
 DLLTOOL='false'
-OBJDUMP='false'
+OBJDUMP='objdump'
 enable_shared='yes'
 enable_static='yes'
 pic_mode='default'
@@ -562,21 +555,21 @@ shared_archive_member_spec=''
 SHELL='/bin/sh'
 ECHO='printf %s\n'
 PATH_SEPARATOR=':'
-host_alias='aarch64-apple-darwin11'
-host='aarch64-apple-darwin11'
-host_os='darwin11'
-build_alias='x86_64-apple-darwin11'
-build='x86_64-apple-darwin11'
-build_os='darwin11'
-SED='/usr/bin/sed'
-Xsed='/usr/bin/sed -e 1s/^X//'
+host_alias='aarch64-apple-darwin20'
+host='aarch64-apple-darwin20'
+host_os='darwin20'
+build_alias='x86_64-apple-darwin21'
+build='x86_64-apple-darwin21'
+build_os='darwin21'
+SED='/usr/local/bin/gsed'
+Xsed='/usr/local/bin/gsed -e 1s/^X//'
 GREP='/usr/bin/grep'
 EGREP='/usr/bin/grep -E'
 FGREP='/usr/bin/grep -F'
 LD='clang'
 NM='nm'
 LN_S='ln -s'
-max_cmd_len='196608'
+max_cmd_len='786432'
 ac_objext='o'
 exeext=''
 lt_unset='unset'
@@ -601,7 +594,7 @@ old_postuninstall_cmds=''
 old_archive_cmds='$AR $AR_FLAGS $oldlib$oldobjs~$RANLIB $tool_oldlib'
 lock_old_archive_extraction='yes'
 CC='clang'
-CFLAGS='-arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk -miphoneos-version-min=6.0  -Wdeclaration-after-statement'
+CFLAGS='-arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk -fembed-bitcode -Wdeclaration-after-statement'
 compiler=''
 GCC='yes'
 lt_cv_sys_global_symbol_pipe='sed -n -e '\''s/^.*[	 ]\([BCDEGRST][BCDEGRST]*\)[	 ][	 ]*_\([_A-Za-z][_A-Za-z0-9]*\)$/\1 _\2 \2/p'\'' | sed '\''/ __gnu_lto/d'\'''
@@ -610,7 +603,7 @@ lt_cv_sys_global_symbol_to_import=''
 lt_cv_sys_global_symbol_to_c_name_address='sed -n -e '\''s/^: \(.*\) .*$/  {"\1", (void *) 0},/p'\'' -e '\''s/^[BCDEGRST][BCDEGRST]* .* \(.*\)$/  {"\1", (void *) \&\1},/p'\'''
 lt_cv_sys_global_symbol_to_c_name_address_lib_prefix='sed -n -e '\''s/^: \(.*\) .*$/  {"\1", (void *) 0},/p'\'' -e '\''s/^[BCDEGRST][BCDEGRST]* .* \(lib.*\)$/  {"\1", (void *) \&\1},/p'\'' -e '\''s/^[BCDEGRST][BCDEGRST]* .* \(.*\)$/  {"lib\1", (void *) \&\1},/p'\'''
 lt_cv_nm_interface='BSD nm'
-nm_file_list_spec=''
+nm_file_list_spec='@'
 lt_sysroot=''
 lt_cv_truncate_bin='/bin/dd bs=4096 count=1'
 objdir='.libs'
@@ -642,7 +635,7 @@ archive_expsym_cmds='sed '\''s|^|_|'\'' < $export_symbols > $output_objdir/$libn
 module_cmds='$CC $allow_undefined_flag -o $lib -bundle $libobjs $deplibs $compiler_flags'
 module_expsym_cmds='sed -e '\''s|^|_|'\'' < $export_symbols > $output_objdir/$libname-symbols.expsym~$CC $allow_undefined_flag -o $lib -bundle $libobjs $deplibs $compiler_flags $wl-exported_symbols_list,$output_objdir/$libname-symbols.expsym'
 with_gnu_ld='no'
-allow_undefined_flag='$wl-undefined ${wl}dynamic_lookup'
+allow_undefined_flag='$wl-flat_namespace $wl-undefined ${wl}suppress'
 no_undefined_flag=''
 hardcode_libdir_flag_spec=''
 hardcode_libdir_separator=''
@@ -676,7 +669,7 @@ postuninstall_cmds=''
 finish_cmds=''
 finish_eval=''
 hardcode_into_libs='no'
-sys_lib_search_path_spec='/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/7.3.0  /usr/local/lib'
+sys_lib_search_path_spec='/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.0.0  /usr/local/lib'
 configure_time_dlsearch_path='/usr/local/lib /lib /usr/lib'
 configure_time_lt_sys_library_path=''
 hardcode_action='immediate'
@@ -729,7 +722,7 @@ file_list_spec_RC=''
 hardcode_action_RC=''
 
 LTCC='clang'
-LTCFLAGS='-arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk -miphoneos-version-min=6.0'
+LTCFLAGS='-arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk -fembed-bitcode'
 compiler='clang'
 
 # A function that is used when there is no print builtin or printf.
@@ -764,7 +757,7 @@ for var in reload_cmds old_postinstall_cmds old_postuninstall_cmds old_archive_c
     esac
 done
 
-ac_aux_dir='.'
+ac_aux_dir='./'
 
 # See if we are running on zsh, and set the options that allow our
 # commands through without removal of \ escapes INIT.
@@ -839,9 +832,9 @@ done
 # We use the long form for the default assignment because of an extremely
 # bizarre bug on SunOS 4.1.3.
 if $ac_need_defaults; then
-  test "${CONFIG_FILES+set}" = set || CONFIG_FILES=$config_files
-  test "${CONFIG_HEADERS+set}" = set || CONFIG_HEADERS=$config_headers
-  test "${CONFIG_COMMANDS+set}" = set || CONFIG_COMMANDS=$config_commands
+  test ${CONFIG_FILES+y} || CONFIG_FILES=$config_files
+  test ${CONFIG_HEADERS+y} || CONFIG_HEADERS=$config_headers
+  test ${CONFIG_COMMANDS+y} || CONFIG_COMMANDS=$config_commands
 fi
 
 # Have a temporary directory for convenience.  Make it in the build tree
@@ -909,14 +902,14 @@ S["ENABLE_THREADSAFE_TRUE"]=""
 S["SYBASE_COMPAT_FALSE"]=""
 S["SYBASE_COMPAT_TRUE"]="#"
 S["dblib_define"]="#define SYBDBLIB 1"
-S["INCPOOL_FALSE"]="#"
-S["INCPOOL_TRUE"]=""
-S["INCSERVER_FALSE"]="#"
-S["INCSERVER_TRUE"]=""
-S["INCAPPS_FALSE"]="#"
-S["INCAPPS_TRUE"]=""
+S["INCPOOL_FALSE"]=""
+S["INCPOOL_TRUE"]="#"
+S["INCSERVER_FALSE"]=""
+S["INCSERVER_TRUE"]="#"
+S["INCAPPS_FALSE"]=""
+S["INCAPPS_TRUE"]="#"
 S["HAVE_OPENSSL"]=""
-S["OPENSSL_LIBS"]="-lssl -lcrypto -lz"
+S["OPENSSL_LIBS"]=""
 S["OPENSSL_CFLAGS"]=""
 S["NETTLE_LIBS"]=""
 S["NETTLE_CFLAGS"]=""
@@ -952,18 +945,26 @@ S["PTHREAD_CFLAGS"]="-D_THREAD_SAFE "
 S["PTHREAD_LIBS"]=""
 S["PTHREAD_CC"]="clang"
 S["acx_pthread_config"]=""
-S["READLINE_LIBS"]=""
+S["READLINE_LIBS"]="-lncurses  -lreadline"
 S["NETWORK_LIBS"]=""
 S["MINGW32_FALSE"]=""
 S["MINGW32_TRUE"]="#"
 S["HAVE_PERL_SOURCES"]=""
 S["HAVE_PERL_SOURCES_FALSE"]=""
 S["HAVE_PERL_SOURCES_TRUE"]="#"
-S["ODBC_CONFIG"]=""
-S["HAVE_DOXYGEN_FALSE"]=""
-S["HAVE_DOXYGEN_TRUE"]="#"
-S["DOXYGEN"]=""
+S["ODBC_CONFIG"]="odbc_config"
+S["HAVE_DOXYGEN_FALSE"]="#"
+S["HAVE_DOXYGEN_TRUE"]=""
+S["DOXYGEN"]="doxygen"
+S["LTLIBICONV"]="-liconv"
+S["LIBICONV"]="-liconv"
 S["RC"]=""
+S["LIBADD_DL"]=" "
+S["LT_DLPREOPEN"]="-dlpreopen dlopen.la "
+S["LIBADD_DLD_LINK"]=""
+S["LIBADD_SHL_LOAD"]=""
+S["LIBADD_DLOPEN"]=""
+S["LT_DLLOADERS"]=" dlopen.la"
 S["LT_SYS_LIBRARY_PATH"]=""
 S["OTOOL64"]=":"
 S["OTOOL"]="otool"
@@ -979,11 +980,11 @@ S["ac_ct_DUMPBIN"]="link -dump"
 S["DUMPBIN"]=":"
 S["LD"]="clang"
 S["FGREP"]="/usr/bin/grep -F"
+S["EGREP"]="/usr/bin/grep -E"
 S["LIBTOOL"]="$(SHELL) $(top_builddir)/libtool"
-S["OBJDUMP"]="false"
+S["OBJDUMP"]="objdump"
 S["DLLTOOL"]="false"
 S["AS"]="as"
-S["EGREP"]="/usr/bin/grep -E"
 S["CPP"]="clang -E"
 S["am__fastdepCC_FALSE"]="#"
 S["am__fastdepCC_TRUE"]=""
@@ -992,35 +993,33 @@ S["am__nodep"]="_no"
 S["AMDEPBACKSLASH"]="\\"
 S["AMDEP_FALSE"]="#"
 S["AMDEP_TRUE"]=""
-S["am__quote"]=""
 S["am__include"]="include"
 S["DEPDIR"]=".deps"
 S["OBJEXT"]="o"
 S["EXEEXT"]=""
 S["ac_ct_CC"]=""
 S["CPPFLAGS"]=" -D_REENTRANT -D_THREAD_SAFE -DDEBUG=1 -Wall -Wstrict-prototypes -Wmissing-prototypes -Wno-long-long -Wpointer-arith"
-S["LDFLAGS"]="-arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk -miphoneos-version-min=6"\
-".0"
-S["CFLAGS"]="-arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk -miphoneos-version-min=6"\
-".0  -Wdeclaration-after-statement"
+S["LDFLAGS"]="-arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk -fembed-bitcode"
+S["CFLAGS"]="-arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/WatchSimulator.platform/Developer/SDKs/WatchSimulator.sdk -fembed-bitcode"\
+" -Wdeclaration-after-statement"
 S["CC"]="clang"
 S["MACOSX_FALSE"]="#"
 S["MACOSX_TRUE"]=""
-S["host_os"]="darwin11"
+S["host_os"]="darwin20"
 S["host_vendor"]="apple"
 S["host_cpu"]="aarch64"
-S["host"]="aarch64-apple-darwin11"
-S["build_os"]="darwin11"
+S["host"]="aarch64-apple-darwin20"
+S["build_os"]="darwin21"
 S["build_vendor"]="apple"
 S["build_cpu"]="x86_64"
-S["build"]="x86_64-apple-darwin11"
+S["build"]="x86_64-apple-darwin21"
 S["PKG_CONFIG_LIBDIR"]=""
 S["PKG_CONFIG_PATH"]=""
 S["PKG_CONFIG"]="/usr/local/bin/pkg-config"
-S["SED"]="/usr/bin/sed"
+S["SED"]="/usr/local/bin/gsed"
 S["LN_S"]="ln -s"
 S["GREP"]="/usr/bin/grep"
-S["BUILD_NUMBER"]="6113"
+S["BUILD_NUMBER"]="8007"
 S["SUBVERSION"]="15"
 S["MINOR"]="00"
 S["MAJOR"]="1"
@@ -1033,17 +1032,17 @@ S["am__tar"]="$${TAR-tar} chof - \"$$tardir\""
 S["AMTAR"]="$${TAR-tar}"
 S["am__leading_dot"]="."
 S["SET_MAKE"]=""
-S["AWK"]="awk"
+S["AWK"]="gawk"
 S["mkdir_p"]="$(MKDIR_P)"
 S["MKDIR_P"]="./install-sh -c -d"
 S["INSTALL_STRIP_PROGRAM"]="$(install_sh) -c -s"
 S["STRIP"]="strip"
-S["install_sh"]="${SHELL} /Users/mof/Downloads/FreeTDS-iOS/freetds-1.00.15/install-sh"
-S["MAKEINFO"]="${SHELL} /Users/mof/Downloads/FreeTDS-iOS/freetds-1.00.15/missing makeinfo"
-S["AUTOHEADER"]="${SHELL} /Users/mof/Downloads/FreeTDS-iOS/freetds-1.00.15/missing autoheader"
-S["AUTOMAKE"]="${SHELL} /Users/mof/Downloads/FreeTDS-iOS/freetds-1.00.15/missing automake-1.15"
-S["AUTOCONF"]="${SHELL} /Users/mof/Downloads/FreeTDS-iOS/freetds-1.00.15/missing autoconf"
-S["ACLOCAL"]="${SHELL} /Users/mof/Downloads/FreeTDS-iOS/freetds-1.00.15/missing aclocal-1.15"
+S["install_sh"]="${SHELL} /Users/ja/Projects/Source/freetds-ios/freetds-1.00.15/install-sh"
+S["MAKEINFO"]="${SHELL} /Users/ja/Projects/Source/freetds-ios/freetds-1.00.15/missing makeinfo"
+S["AUTOHEADER"]="${SHELL} /Users/ja/Projects/Source/freetds-ios/freetds-1.00.15/missing autoheader"
+S["AUTOMAKE"]="${SHELL} /Users/ja/Projects/Source/freetds-ios/freetds-1.00.15/missing automake-1.16"
+S["AUTOCONF"]="${SHELL} /Users/ja/Projects/Source/freetds-ios/freetds-1.00.15/missing autoconf"
+S["ACLOCAL"]="${SHELL} /Users/ja/Projects/Source/freetds-ios/freetds-1.00.15/missing aclocal-1.16"
 S["VERSION"]="1.00.15"
 S["PACKAGE"]="freetds"
 S["CYGPATH_W"]="echo"
@@ -1052,8 +1051,8 @@ S["INSTALL_DATA"]="${INSTALL} -m 644"
 S["INSTALL_SCRIPT"]="${INSTALL}"
 S["INSTALL_PROGRAM"]="${INSTALL}"
 S["target_alias"]=""
-S["host_alias"]="aarch64-apple-darwin11"
-S["build_alias"]="x86_64-apple-darwin11"
+S["host_alias"]="aarch64-apple-darwin20"
+S["build_alias"]="x86_64-apple-darwin21"
 S["LIBS"]=" "
 S["ECHO_T"]=""
 S["ECHO_N"]=""
@@ -1070,6 +1069,7 @@ S["infodir"]="${datarootdir}/info"
 S["docdir"]="${datarootdir}/doc/${PACKAGE_TARNAME}"
 S["oldincludedir"]="/usr/include"
 S["includedir"]="${prefix}/include"
+S["runstatedir"]="${localstatedir}/run"
 S["localstatedir"]="${prefix}/var"
 S["sharedstatedir"]="${prefix}/com"
 S["sysconfdir"]="${prefix}/etc"
@@ -1079,7 +1079,7 @@ S["libexecdir"]="${exec_prefix}/libexec"
 S["sbindir"]="${exec_prefix}/sbin"
 S["bindir"]="${exec_prefix}/bin"
 S["program_transform_name"]="s,x,x,"
-S["prefix"]="/Users/mof/Downloads/FreeTDS-iOS/build/freetds/arm64"
+S["prefix"]="/Users/ja/Projects/Source/freetds-ios/build/WatchSimulator/arm64"
 S["exec_prefix"]="${prefix}"
 S["PACKAGE_URL"]=""
 S["PACKAGE_BUGREPORT"]=""
@@ -1089,6 +1089,7 @@ S["PACKAGE_TARNAME"]="freetds"
 S["PACKAGE_NAME"]="FreeTDS"
 S["PATH_SEPARATOR"]=":"
 S["SHELL"]="/bin/sh"
+S["am__quote"]=""
 _ACAWK
 cat >>"$ac_tmp/subs1.awk" <<_ACAWK &&
   for (key in S) S_is_set[key] = 1
@@ -1138,26 +1139,45 @@ D["PACKAGE_BUGREPORT"]=" \"\""
 D["PACKAGE_URL"]=" \"\""
 D["PACKAGE"]=" \"freetds\""
 D["VERSION"]=" \"1.00.15\""
-D["STDC_HEADERS"]=" 1"
-D["HAVE_SYS_TYPES_H"]=" 1"
-D["HAVE_SYS_STAT_H"]=" 1"
+D["HAVE_STDIO_H"]=" 1"
 D["HAVE_STDLIB_H"]=" 1"
 D["HAVE_STRING_H"]=" 1"
-D["HAVE_MEMORY_H"]=" 1"
-D["HAVE_STRINGS_H"]=" 1"
 D["HAVE_INTTYPES_H"]=" 1"
 D["HAVE_STDINT_H"]=" 1"
+D["HAVE_STRINGS_H"]=" 1"
+D["HAVE_SYS_STAT_H"]=" 1"
+D["HAVE_SYS_TYPES_H"]=" 1"
 D["HAVE_UNISTD_H"]=" 1"
-D["__EXTENSIONS__"]=" 1"
+D["HAVE_WCHAR_H"]=" 1"
+D["HAVE_SYS_TIME_H"]=" 1"
+D["STDC_HEADERS"]=" 1"
 D["_ALL_SOURCE"]=" 1"
+D["_DARWIN_C_SOURCE"]=" 1"
 D["_GNU_SOURCE"]=" 1"
+D["_HPUX_ALT_XOPEN_SOCKET_API"]=" 1"
+D["_NETBSD_SOURCE"]=" 1"
+D["_OPENBSD_SOURCE"]=" 1"
 D["_POSIX_PTHREAD_SEMANTICS"]=" 1"
+D["__STDC_WANT_IEC_60559_ATTRIBS_EXT__"]=" 1"
+D["__STDC_WANT_IEC_60559_BFP_EXT__"]=" 1"
+D["__STDC_WANT_IEC_60559_DFP_EXT__"]=" 1"
+D["__STDC_WANT_IEC_60559_FUNCS_EXT__"]=" 1"
+D["__STDC_WANT_IEC_60559_TYPES_EXT__"]=" 1"
+D["__STDC_WANT_LIB_EXT2__"]=" 1"
+D["__STDC_WANT_MATH_SPEC_FUNCS__"]=" 1"
 D["_TANDEM_SOURCE"]=" 1"
+D["__EXTENSIONS__"]=" 1"
 D["HAVE_DLFCN_H"]=" 1"
 D["LT_OBJDIR"]=" \".libs/\""
+D["HAVE_LIBDL"]=" 1"
+D["HAVE_DLERROR"]=" 1"
+D["HAVE_LIBDLLOADER"]=" 1"
+D["HAVE_ICONV"]=" 1"
+D["ICONV_CONST"]=" "
+D["HAVE_READLINE"]=" 1"
+D["HAVE_RL_ON_NEW_LINE"]=" 1"
 D["HAVE_PTHREAD"]=" 1"
 D["HAVE_PTHREAD_COND_TIMEDWAIT_RELATIVE_NP"]=" 1"
-D["STDC_HEADERS"]=" 1"
 D["TIME_WITH_SYS_TIME"]=" 1"
 D["HAVE_STRUCT_TM_TM_ZONE"]=" 1"
 D["HAVE_TM_ZONE"]=" 1"
@@ -1241,6 +1261,8 @@ D["HAVE_GETOPT"]=" 1"
 D["HAVE_STRSEP"]=" 1"
 D["HAVE_DAEMON"]=" 1"
 D["HAVE_FSEEKO"]=" 1"
+D["HAVE_CLOCK_GETTIME"]=" 1"
+D["TDS_GETTIMEMILLI_CONST"]=" CLOCK_MONOTONIC"
 D["HAVE_ALLOCA_H"]=" 1"
 D["HAVE_ALLOCA"]=" 1"
 D["TDS74"]=" 1"
@@ -1325,7 +1347,7 @@ do
 	   esac ||
 	   as_fn_error 1 "cannot find input file: \`$ac_f'" "$LINENO" 5;;
       esac
-      case $ac_f in *\'*) ac_f=`$as_echo "$ac_f" | sed "s/'/'\\\\\\\\''/g"`;; esac
+      case $ac_f in *\'*) ac_f=`printf "%s\n" "$ac_f" | sed "s/'/'\\\\\\\\''/g"`;; esac
       as_fn_append ac_file_inputs " '$ac_f'"
     done
 
@@ -1333,17 +1355,17 @@ do
     # use $as_me), people would be surprised to read:
     #    /* config.h.  Generated by config.status.  */
     configure_input='Generated from '`
-	  $as_echo "$*" | sed 's|^[^:]*/||;s|:[^:]*/|, |g'
+	  printf "%s\n" "$*" | sed 's|^[^:]*/||;s|:[^:]*/|, |g'
 	`' by configure.'
     if test x"$ac_file" != x-; then
       configure_input="$ac_file.  $configure_input"
-      { $as_echo "$as_me:${as_lineno-$LINENO}: creating $ac_file" >&5
-$as_echo "$as_me: creating $ac_file" >&6;}
+      { printf "%s\n" "$as_me:${as_lineno-$LINENO}: creating $ac_file" >&5
+printf "%s\n" "$as_me: creating $ac_file" >&6;}
     fi
     # Neutralize special characters interpreted by sed in replacement strings.
     case $configure_input in #(
     *\&* | *\|* | *\\* )
-       ac_sed_conf_input=`$as_echo "$configure_input" |
+       ac_sed_conf_input=`printf "%s\n" "$configure_input" |
        sed 's/[\\\\&|]/\\\\&/g'`;; #(
     *) ac_sed_conf_input=$configure_input;;
     esac
@@ -1360,7 +1382,7 @@ $as_expr X"$ac_file" : 'X\(.*[^/]\)//*[^/][^/]*/*$' \| \
 	 X"$ac_file" : 'X\(//\)[^/]' \| \
 	 X"$ac_file" : 'X\(//\)$' \| \
 	 X"$ac_file" : 'X\(/\)' \| . 2>/dev/null ||
-$as_echo X"$ac_file" |
+printf "%s\n" X"$ac_file" |
     sed '/^X\(.*[^/]\)\/\/*[^/][^/]*\/*$/{
 	    s//\1/
 	    q
@@ -1384,9 +1406,9 @@ $as_echo X"$ac_file" |
 case "$ac_dir" in
 .) ac_dir_suffix= ac_top_builddir_sub=. ac_top_build_prefix= ;;
 *)
-  ac_dir_suffix=/`$as_echo "$ac_dir" | sed 's|^\.[\\/]||'`
+  ac_dir_suffix=/`printf "%s\n" "$ac_dir" | sed 's|^\.[\\/]||'`
   # A ".." for each directory in $ac_dir_suffix.
-  ac_top_builddir_sub=`$as_echo "$ac_dir_suffix" | sed 's|/[^\\/]*|/..|g;s|/||'`
+  ac_top_builddir_sub=`printf "%s\n" "$ac_dir_suffix" | sed 's|/[^\\/]*|/..|g;s|/||'`
   case $ac_top_builddir_sub in
   "") ac_top_builddir_sub=. ac_top_build_prefix= ;;
   *)  ac_top_build_prefix=$ac_top_builddir_sub/ ;;
@@ -1445,8 +1467,8 @@ ac_sed_dataroot='
 case `eval "sed -n \"\$ac_sed_dataroot\" $ac_file_inputs"` in
 *datarootdir*) ac_datarootdir_seen=yes;;
 *@datadir@*|*@docdir@*|*@infodir@*|*@localedir@*|*@mandir@*)
-  { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: $ac_file_inputs seems to ignore the --datarootdir setting" >&5
-$as_echo "$as_me: WARNING: $ac_file_inputs seems to ignore the --datarootdir setting" >&2;}
+  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: WARNING: $ac_file_inputs seems to ignore the --datarootdir setting" >&5
+printf "%s\n" "$as_me: WARNING: $ac_file_inputs seems to ignore the --datarootdir setting" >&2;}
   ac_datarootdir_hack='
   s&@datadir@&${datarootdir}&g
   s&@docdir@&${datarootdir}/doc/${PACKAGE_TARNAME}&g
@@ -1495,9 +1517,9 @@ test -z "$ac_datarootdir_hack$ac_datarootdir_seen" &&
   { ac_out=`sed -n '/\${datarootdir}/p' "$ac_tmp/out"`; test -n "$ac_out"; } &&
   { ac_out=`sed -n '/^[	 ]*datarootdir[	 ]*:*=/p' \
       "$ac_tmp/out"`; test -z "$ac_out"; } &&
-  { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: $ac_file contains a reference to the variable \`datarootdir'
+  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: WARNING: $ac_file contains a reference to the variable \`datarootdir'
 which seems to be undefined.  Please make sure it is defined" >&5
-$as_echo "$as_me: WARNING: $ac_file contains a reference to the variable \`datarootdir'
+printf "%s\n" "$as_me: WARNING: $ac_file contains a reference to the variable \`datarootdir'
 which seems to be undefined.  Please make sure it is defined" >&2;}
 
   rm -f "$ac_tmp/stdin"
@@ -1513,20 +1535,20 @@ which seems to be undefined.  Please make sure it is defined" >&2;}
   #
   if test x"$ac_file" != x-; then
     {
-      $as_echo "/* $configure_input  */" \
+      printf "%s\n" "/* $configure_input  */" >&1 \
       && eval '$AWK -f "$ac_tmp/defines.awk"' "$ac_file_inputs"
     } >"$ac_tmp/config.h" \
       || as_fn_error $? "could not create $ac_file" "$LINENO" 5
     if diff "$ac_file" "$ac_tmp/config.h" >/dev/null 2>&1; then
-      { $as_echo "$as_me:${as_lineno-$LINENO}: $ac_file is unchanged" >&5
-$as_echo "$as_me: $ac_file is unchanged" >&6;}
+      { printf "%s\n" "$as_me:${as_lineno-$LINENO}: $ac_file is unchanged" >&5
+printf "%s\n" "$as_me: $ac_file is unchanged" >&6;}
     else
       rm -f "$ac_file"
       mv "$ac_tmp/config.h" "$ac_file" \
 	|| as_fn_error $? "could not create $ac_file" "$LINENO" 5
     fi
   else
-    $as_echo "/* $configure_input  */" \
+    printf "%s\n" "/* $configure_input  */" >&1 \
       && eval '$AWK -f "$ac_tmp/defines.awk"' "$ac_file_inputs" \
       || as_fn_error $? "could not create -" "$LINENO" 5
   fi
@@ -1546,7 +1568,7 @@ $as_expr X"$_am_arg" : 'X\(.*[^/]\)//*[^/][^/]*/*$' \| \
 	 X"$_am_arg" : 'X\(//\)[^/]' \| \
 	 X"$_am_arg" : 'X\(//\)$' \| \
 	 X"$_am_arg" : 'X\(/\)' \| . 2>/dev/null ||
-$as_echo X"$_am_arg" |
+printf "%s\n" X"$_am_arg" |
     sed '/^X\(.*[^/]\)\/\/*[^/][^/]*\/*$/{
 	    s//\1/
 	    q
@@ -1566,8 +1588,8 @@ $as_echo X"$_am_arg" |
 	  s/.*/./; q'`/stamp-h$_am_stamp_count
  ;;
 
-  :C)  { $as_echo "$as_me:${as_lineno-$LINENO}: executing $ac_file commands" >&5
-$as_echo "$as_me: executing $ac_file commands" >&6;}
+  :C)  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: executing $ac_file commands" >&5
+printf "%s\n" "$as_me: executing $ac_file commands" >&6;}
  ;;
   esac
 
@@ -1577,29 +1599,35 @@ $as_echo "$as_me: executing $ac_file commands" >&6;}
   # Older Autoconf quotes --file arguments for eval, but not when files
   # are listed without --file.  Let's play safe and only enable the eval
   # if we detect the quoting.
-  case $CONFIG_FILES in
-  *\'*) eval set x "$CONFIG_FILES" ;;
-  *)   set x $CONFIG_FILES ;;
-  esac
+  # TODO: see whether this extra hack can be removed once we start
+  # requiring Autoconf 2.70 or later.
+  case $CONFIG_FILES in #(
+  *\'*) :
+    eval set x "$CONFIG_FILES" ;; #(
+  *) :
+    set x $CONFIG_FILES ;; #(
+  *) :
+     ;;
+esac
   shift
-  for mf
+  # Used to flag and report bootstrapping failures.
+  am_rc=0
+  for am_mf
   do
     # Strip MF so we end up with the name of the file.
-    mf=`echo "$mf" | sed -e 's/:.*$//'`
-    # Check whether this is an Automake generated Makefile or not.
-    # We used to match only the files named 'Makefile.in', but
-    # some people rename them; so instead we look at the file content.
-    # Grep'ing the first line is not enough: some people post-process
-    # each Makefile.in and add a new line on top of each file to say so.
-    # Grep'ing the whole file is not good either: AIX grep has a line
+    am_mf=`printf "%s\n" "$am_mf" | sed -e 's/:.*$//'`
+    # Check whether this is an Automake generated Makefile which includes
+    # dependency-tracking related rules and includes.
+    # Grep'ing the whole file directly is not great: AIX grep has a line
     # limit of 2048, but all sed's we know have understand at least 4000.
-    if sed -n 's,^#.*generated by automake.*,X,p' "$mf" | grep X >/dev/null 2>&1; then
-      dirpart=`$as_dirname -- "$mf" ||
-$as_expr X"$mf" : 'X\(.*[^/]\)//*[^/][^/]*/*$' \| \
-	 X"$mf" : 'X\(//\)[^/]' \| \
-	 X"$mf" : 'X\(//\)$' \| \
-	 X"$mf" : 'X\(/\)' \| . 2>/dev/null ||
-$as_echo X"$mf" |
+    sed -n 's,^am--depfiles:.*,X,p' "$am_mf" | grep X >/dev/null 2>&1 \
+      || continue
+    am_dirpart=`$as_dirname -- "$am_mf" ||
+$as_expr X"$am_mf" : 'X\(.*[^/]\)//*[^/][^/]*/*$' \| \
+	 X"$am_mf" : 'X\(//\)[^/]' \| \
+	 X"$am_mf" : 'X\(//\)$' \| \
+	 X"$am_mf" : 'X\(/\)' \| . 2>/dev/null ||
+printf "%s\n" X"$am_mf" |
     sed '/^X\(.*[^/]\)\/\/*[^/][^/]*\/*$/{
 	    s//\1/
 	    q
@@ -1617,53 +1645,50 @@ $as_echo X"$mf" |
 	    q
 	  }
 	  s/.*/./; q'`
-    else
-      continue
-    fi
-    # Extract the definition of DEPDIR, am__include, and am__quote
-    # from the Makefile without running 'make'.
-    DEPDIR=`sed -n 's/^DEPDIR = //p' < "$mf"`
-    test -z "$DEPDIR" && continue
-    am__include=`sed -n 's/^am__include = //p' < "$mf"`
-    test -z "$am__include" && continue
-    am__quote=`sed -n 's/^am__quote = //p' < "$mf"`
-    # Find all dependency output files, they are included files with
-    # $(DEPDIR) in their names.  We invoke sed twice because it is the
-    # simplest approach to changing $(DEPDIR) to its actual value in the
-    # expansion.
-    for file in `sed -n "
-      s/^$am__include $am__quote\(.*(DEPDIR).*\)$am__quote"'$/\1/p' <"$mf" | \
-	 sed -e 's/\$(DEPDIR)/'"$DEPDIR"'/g'`; do
-      # Make sure the directory exists.
-      test -f "$dirpart/$file" && continue
-      fdir=`$as_dirname -- "$file" ||
-$as_expr X"$file" : 'X\(.*[^/]\)//*[^/][^/]*/*$' \| \
-	 X"$file" : 'X\(//\)[^/]' \| \
-	 X"$file" : 'X\(//\)$' \| \
-	 X"$file" : 'X\(/\)' \| . 2>/dev/null ||
-$as_echo X"$file" |
-    sed '/^X\(.*[^/]\)\/\/*[^/][^/]*\/*$/{
+    am_filepart=`$as_basename -- "$am_mf" ||
+$as_expr X/"$am_mf" : '.*/\([^/][^/]*\)/*$' \| \
+	 X"$am_mf" : 'X\(//\)$' \| \
+	 X"$am_mf" : 'X\(/\)' \| . 2>/dev/null ||
+printf "%s\n" X/"$am_mf" |
+    sed '/^.*\/\([^/][^/]*\)\/*$/{
 	    s//\1/
 	    q
 	  }
-	  /^X\(\/\/\)[^/].*/{
+	  /^X\/\(\/\/\)$/{
 	    s//\1/
 	    q
 	  }
-	  /^X\(\/\/\)$/{
-	    s//\1/
-	    q
-	  }
-	  /^X\(\/\).*/{
+	  /^X\/\(\/\).*/{
 	    s//\1/
 	    q
 	  }
 	  s/.*/./; q'`
-      as_dir=$dirpart/$fdir; as_fn_mkdir_p
-      # echo "creating $dirpart/$file"
-      echo '# dummy' > "$dirpart/$file"
-    done
+    { echo "$as_me:$LINENO: cd "$am_dirpart" \
+      && sed -e '/# am--include-marker/d' "$am_filepart" \
+        | $MAKE -f - am--depfiles" >&5
+   (cd "$am_dirpart" \
+      && sed -e '/# am--include-marker/d' "$am_filepart" \
+        | $MAKE -f - am--depfiles) >&5 2>&5
+   ac_status=$?
+   echo "$as_me:$LINENO: \$? = $ac_status" >&5
+   (exit $ac_status); } || am_rc=$?
   done
+  if test $am_rc -ne 0; then
+    { { printf "%s\n" "$as_me:${as_lineno-$LINENO}: error: in \`$ac_pwd':" >&5
+printf "%s\n" "$as_me: error: in \`$ac_pwd':" >&2;}
+as_fn_error $? "Something went wrong bootstrapping makefile fragments
+    for automatic dependency tracking.  If GNU make was not used, consider
+    re-running the configure script with MAKE=\"gmake\" (or whatever is
+    necessary).  You can also try re-running configure with the
+    '--disable-dependency-tracking' option to at least be able to build
+    the package (albeit without support for automatic dependency tracking).
+See \`config.log' for more details" "$LINENO" 5; }
+  fi
+  { am_dirpart=; unset am_dirpart;}
+  { am_filepart=; unset am_filepart;}
+  { am_mf=; unset am_mf;}
+  { am_rc=; unset am_rc;}
+  rm -f conftest-deps.mk
 }
  ;;
     "libtool":C)
@@ -2195,6 +2220,7 @@ fi
 _LT_EOF
     ;;
   esac
+
 
 
 ltmain=$ac_aux_dir/ltmain.sh

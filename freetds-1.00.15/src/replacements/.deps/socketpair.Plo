@@ -1,3 +1,0 @@
-socketpair.lo: socketpair.c ../../include/config.h
-
-../../include/config.h:
